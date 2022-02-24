@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)   // 상속 전략 = 싱글 테이블
+@DiscriminatorColumn    // default = DTYPE
+public abstract class Item extends BaseEntity {
 
     @Id
     @GeneratedValue
